@@ -20,11 +20,11 @@ public class Weather {
      *         If the measurement is not in inches, it converts the value to millimeters.
      */
     public double getRainfall() {
-        double wsRainfall = weatherService.getRainfall();
+        double wsRainfall = weatherService.getRainfall(); // Assume this returns rainfall in inches
         if (inches) {
-            return wsRainfall / 25.4;
-        } else {
             return wsRainfall;
+        } else {
+            return wsRainfall * 25.4; // Convert inches to millimeters
         }
     }
 }

@@ -14,8 +14,8 @@ public class LibraryAccount {
      */
     public Book[] getBooks(String userId) {
         String[] parts = userId.split(":");
-        String name = parts[0];
-        String id = parts[1];
+        String id = parts[0];
+        String name = parts[1];
         return libraryService.getBooks(name, id);        
     }
 }

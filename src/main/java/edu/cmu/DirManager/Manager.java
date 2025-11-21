@@ -11,14 +11,14 @@ public class Manager {
      *        -1 if the directory already exists,
      *        -2 if the path is invalid
      */
-    public int newDirectory(String path) {
-        if (dirOps.checkDirectoryExists(path)) {
-            return -1;
-        } else if (!dirOps.checkPathValid(path)) {
-            return -2;
-        } else {
-            dirOps.createDirectory(path);
-            return 0;
+    public boolean newDirectory(String path) {
+        if (path == null || path.isEmpty() || !dirOps.checkPathValid(path)) {
+            throw new IllegalArgumentException("Path cannot be null, empty, or invalid string.");
         }
+        if (dirOps.checkDirectoryExists(path)){
+            return false;
+        }
+        dirOps.createDirectory(path);
+        return true;
     }
 }

@@ -7,9 +7,8 @@ public class Manager {
      * Creates a new directory at the specified path.
      *
      * @param path the path where the new directory should be created
-     * @return 0 if the directory creation was successful
-     *        -1 if the directory already exists,
-     *        -2 if the path is invalid
+     * @return true if the directory was created successfully, false if it already exists
+     * @throws IllegalArgumentException if the path is null, empty, or invalid
      */
     public boolean newDirectory(String path) {
         if (path == null || path.isEmpty() || !dirOps.checkPathValid(path)) {

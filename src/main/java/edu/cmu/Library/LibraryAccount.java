@@ -22,6 +22,6 @@ public class LibraryAccount {
         if (userName == null || userName.isBlank())
             throw new IllegalArgumentException("userName cannot be null or blank");
         
-        return libraryService.getBooks(libraryId, userName);        
+        return libraryService.getBooks(userName, libraryId);        
     }
 }
